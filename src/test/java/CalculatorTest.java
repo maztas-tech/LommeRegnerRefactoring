@@ -1,41 +1,38 @@
 import Files.Calculator;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 
 class CalculatorTest {
+    private static final Calculator calculator = new Calculator();
 
-    @org.junit.jupiter.api.Test
+    @Test
     void add() {
-        Calculator calculator = new Calculator();
         double first = 1.0;
         double second = 2.0;
         double result = calculator.add(first,second);
-        Assertions Assert;
         Assertions.assertEquals(3.0, result, 0.1);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void subtract() {
-        Calculator calculator = new Calculator();
         double first = 1.0;
         double second = 2.0;
         double result = calculator.subtract(first,second);
         Assertions.assertEquals(-1.0, result, 0.1);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void multiply() {
-        Calculator calculator = new Calculator();
         double first = 1.0;
         double second = 2.0;
         double result = calculator.multiply(first,second);
         Assertions.assertEquals(2.0, result, 0.1);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void divide() {
-        Calculator calculator = new Calculator();
         double first = 1.0;
         double second = 2.0;
         double result = calculator.divide(first,second);
