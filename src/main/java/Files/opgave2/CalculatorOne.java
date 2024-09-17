@@ -1,4 +1,4 @@
-package Files;
+package Files.opgave2;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

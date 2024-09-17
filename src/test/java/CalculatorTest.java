@@ -1,4 +1,4 @@
-import Files.Calculator;
+import Files.opgave1.Calculator;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

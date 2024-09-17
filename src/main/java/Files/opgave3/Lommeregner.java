@@ -1,4 +1,4 @@
-package Files;
+package Files.opgave3;
 
 public class Lommeregner {
     //Attributer

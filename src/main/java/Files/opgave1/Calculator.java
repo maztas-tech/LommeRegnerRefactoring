@@ -1,4 +1,4 @@
-package Files;
+package Files.opgave1;
 
 public class Calculator {
 
