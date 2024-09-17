@@ -1,7 +1,11 @@
-public class Lommerregner {
+package Files;
 
+public class Lommerregner {
+    //Attributer
     private double førsteTal;
     private double andenTal;
+
+    //Overloaded constructors
 
     public Lommerregner() {
     }
@@ -15,6 +19,8 @@ public class Lommerregner {
         this.andenTal = andenTal;
     }
 
+
+    //Getters og setters
 
     public double getFørsteTal() {
         return førsteTal;
