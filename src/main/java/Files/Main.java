@@ -6,13 +6,20 @@ public class Main {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         Scanner brugerInput = new Scanner(System.in);
+        /*
+        Bruger input for første og anden værdier
+         */
 
-        System.out.print("skriv første tal: ");
+        System.out.print("Skriv første tal: ");
         double førsteVærdi = brugerInput.nextDouble();
 
-        System.out.print("skriv andet tal: ");
+        System.out.print("Skriv andet tal: ");
         double andenVærdi = brugerInput.nextDouble();
 
+        /*
+        Denne switch tager i mod hvilken operand der skal benyttes
+        hvor den derefter printer værdierne ud.
+         */
         System.out.println("Vælg operator");
 
         switch (brugerInput.next()) {
