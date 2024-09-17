@@ -1,5 +1,6 @@
 package Files.opgave1;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -24,19 +25,21 @@ public class Main {
 
         switch (brugerInput.next()) {
             case "+":
-                System.out.println(calculator.add(førsteVærdi, andenVærdi));
+                out(calculator.add(førsteVærdi, andenVærdi));
                 break;
             case "-":
-                System.out.println(calculator.subtract(førsteVærdi, andenVærdi));
+                out(calculator.subtract(førsteVærdi, andenVærdi));
                 break;
             case "*":
-                System.out.println(calculator.multiply(førsteVærdi, andenVærdi));
+                out(calculator.multiply(førsteVærdi, andenVærdi));
                 break;
             case "/":
-                System.out.println(calculator.divide(førsteVærdi, andenVærdi));
+                out(calculator.divide(førsteVærdi, andenVærdi));
                 break;
         }
+    }
 
-
+    private static void out(Object input){
+        System.out.println(input);
     }
 }
