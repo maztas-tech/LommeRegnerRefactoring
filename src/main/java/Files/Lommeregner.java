@@ -1,20 +1,20 @@
 package Files;
 
-public class Lommerregner {
+public class Lommeregner {
     //Attributer
     private double førsteTal;
     private double andenTal;
 
     //Overloaded constructors
 
-    public Lommerregner() {
+    public Lommeregner() {
     }
 
-    public Lommerregner(double førsteTal) {
+    public Lommeregner(double førsteTal) {
         this.førsteTal = førsteTal;
     }
 
-    public Lommerregner(double førsteTal, double andenTal) {
+    public Lommeregner(double førsteTal, double andenTal) {
         this.førsteTal = førsteTal;
         this.andenTal = andenTal;
     }

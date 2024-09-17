@@ -1,71 +1,84 @@
-package main.java.Org.Example.Calculator;
+package Files;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Calculator {
+public class CalculatorOne {
+    private static Scanner input = new Scanner(System.in);
     public static void main(String[] args){
-        Scanner input=new Scanner(System.in);
-// "char" kan bruges ligesom string og int. Det må dog kun være et tegn.
-        double num1=0;
-        double num2=0;
-        char op;
+        // "char" kan bruges ligesom string og int. Det må dog kun være et tegn.
+
+        double userNumber1;
+        double userNumber2;
+        char userInput;
         double result;
+        boolean runCalculator = true;
 
-        while (true){
-            System.out.println("Velkommen til regnemaskinen");
-            System.out.println(" + for addition ");
-            System.out.println(" - for substraktion");
-            System.out.println(" * for multiplikation");
-            System.out.println(" / for division");
-            System.out.println(" q for quit");
-            op=input.next().charAt(0);
+        while (runCalculator){
+            try {
+                System.out.println("""
+                    
+                    Velkommen til regnemaskinen
+                    + for addition 
+                    - for substraktion 
+                    * for multiplikation 
+                    / for division 
+                    q for quit
+                    """);
 
-            if (op=='q') break;
-            num1=inputDouble("write first number : ");
+                userInput = input.next().charAt(0);
+                if (Character.isDigit(userInput)){
+                    throw new InputMismatchException();
+                }
+
+                if (userInput == 'q'){
+                    runCalculator = false;
+                }
+
+                userNumber1 = inputDouble("Write first number : ");
 
 
 
-            System.out.print("Write second number : ");
-            num2=input.nextDouble();
+                userNumber2 = inputDouble("Write second number : ");
 
-            switch (op){
-                case '+':
-                    result=num1+num2;
-                    break;
-                case '-':
-                    result=num1-num2;
-                    break;
-                case '*':
-                    result=num1*num2;
-                    break;
-                case '/':
-                    result=num1/num2;
-                    break;
-                default:
-                    System.out.print("ugyldig oprator (regne tegn)");
-                    input.nextLine();
-                    continue;
-            } //switch end
-            System.out.print("RESULT = " + result);
-            System.out.println();
+                switch (userInput){
+                    case '+':
+                        result = userNumber1 + userNumber2;
+                        break;
+                    case '-':
+                        result = userNumber1 - userNumber2;
+                        break;
+                    case '*':
+                        result = userNumber1 * userNumber2;
+                        break;
+                    case '/':
+                        result = userNumber1 / userNumber2;
+                        break;
+                    default:
+                        continue;
+                }
 
-        }// while løkke slut
-    }//main
-    static double inputDouble(String promt) {
-        Scanner input=new Scanner(System.in);
+                System.out.print("RESULT = " + result + "\n");
+
+            }catch (InputMismatchException e){
+                System.out.print("Ugyldig oprator (regne tegn)");
+            }
+        }
+    }
+    
+    private static double inputDouble(String userPrompt) {
         boolean ok = false;
-        double num=0;
+        double number = 0;
 
         do {
             try {
-                System.out.print(promt);
-                num = input.nextDouble();
+                System.out.print(userPrompt);
+                number = input.nextDouble();
                 ok = true;
             } catch (InputMismatchException e) {
                 System.out.println("wrong input, try again");
             }
         } while (!ok);
-        return num;
+        return number;
     }
 }
